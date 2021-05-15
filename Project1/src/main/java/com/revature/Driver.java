@@ -33,8 +33,8 @@ public class Driver {
 //		System.out.println(m.approveReimbRequest(3, 2));
 //		System.out.println(m.denyReimbRequest(3, 3));
 //		System.out.println(m.viewResolvedRequests());
-//		System.out.println(m.viewAllEmployees());
-		System.out.println(e.updateInfo(manager));
+		System.out.println(m.viewAllEmployees());
+//		System.out.println(e.updateInfo(manager));
 	}
 
 }
