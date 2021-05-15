@@ -1,0 +1,8 @@
+Employee Number: 2 was terminated by Manager Number: 77
+ for the reason: insubordination
+Employee Number: 6 was terminated by Manager Number: 77
+ for the reason: theft
+Employee Number: 7 was terminated by Manager Number: 77
+ for the reason: insubordination
+Employee Number: 0 was terminated by Manager Number: 77
+ for the reason: breaking law

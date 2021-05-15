@@ -1,0 +1,148 @@
+create table swords.employees
+(
+	employee_number serial primary key,
+	user_name varchar(30) not null,
+	password varchar(30) not null,
+	first_name varchar(30) not null,
+	last_name varchar(30) not null,
+	title varchar(30) not null
+);
+
+insert into swords.employees values (1, 'employee', 'password', 'John', 'Smith', 'Associate');
+
+select * from swords.employees where user_name = 'employee' and password = 'password';
+
+alter table swords.employees 
+alter column title set default 'Associate';
+
+alter table swords.employees 
+alter column password type varchar(100);
+
+insert into swords.employees (employee_number, user_name, "password", first_name, last_name, title) values (77, 'manager', 'password', 'Miyamoto', 'Musashi', 'Manager');
+------------------------------------------------
+create table swords.customers
+(
+	customer_number serial primary key,
+	user_name varchar(30) not null,
+	password varchar(30) not null,
+	first_name varchar(30) not null,
+	last_name varchar(30) not null
+);
+
+alter table swords.customers 
+alter column password type varchar(100);
+
+insert into swords.customers (user_name, password, first_name, last_name ) values ('scotland','password','william','wallace');
+
+select * from swords.customers where user_name = 'scotland' and password = 'password';
+
+update swords.customers set password = '5f4dcc3b5aa765d61d8327deb882cf99';
+-------------------------------------------------
+create table inventory
+(
+	sword_number serial primary key,
+	type varchar(30) not null,
+	name varchar(30) not null,
+	current_offer numeric(12,2) not null,
+	available boolean not null
+);
+
+insert into swords.inventory (sword_number, type, name, current_offer, available)
+values(2,'cheap', 'fakeblade', 69, true);
+
+select * from swords.inventory where available = true;
+select * from swords.inventory where available = true order by type;
+select * from swords.inventory where sword_number = 7 and available = true;
+update swords.inventory set current_offer = 10000 where sword_number = 7;
+
+delete from swords.offers where sword_number = 3;
+delete from swords.inventory where sword_number = 3;
+
+update swords.inventory set available = false where sword_number = (select sword_number from swords.offers where offer_number = 1);
+
+delete from swords.inventory where sword_number = 14;
+
+update swords.inventory set current_offer = 2001 where sword_number = 8;
+---------------------------------------------------
+create table swords.payments
+(
+	payment_number serial primary key,
+	sword_number int,
+	customer_number int,
+	total_balance numeric(12, 2) not null ,
+	weekly_payment numeric(12,2) not null,
+	weekly_payments_left int not null,
+	paid_off boolean not null default false,
+	constraint fk_sword foreign key(sword_number) references swords.inventory(sword_number),
+	constraint fk_customer foreign key(customer_number) references swords.customers(customer_number)
+);
+
+select * from swords.payments p where customer_number = 1;
+
+select * from swords.payments p where customer_number = 1 and payment_number = 1;
+insert into swords.payments (sword_number,customer_number,total_balance, weekly_payment, weekly_payments_left)
+select sword_number , customer_number, offer_amount, offer_amount/52, 52 from swords.offers where sword_number = 1;
+
+update swords.payments set total_balance = total_balance - (weekly_payment * 1) where payment_number = 1;
+update swords.payments set weekly_payments_left = (weekly_payments_left - 1) where payment_number = 1;
+-----------------------------------------------------
+create table swords.offers
+(
+	offer_number serial primary key,
+	sword_number int not null,
+	customer_number int not null,
+	offer_amount numeric(12, 2) not null,
+	offer_accepted boolean not null default false,
+	offer_pending boolean not null default true,
+	approved_by_employee_number int,
+	constraint fk_emp_no foreign key(approved_by_employee_number) references swords.employees(employee_number),	
+	constraint fk_sword foreign key(sword_number) references swords.inventory(sword_number),
+	constraint fk_customer foreign key(customer_number) references swords.customers(customer_number)
+);
+
+insert into swords.offers (sword_number, customer_number, offer_amount) values (10,9,2105);
+
+update swords.inventory set current_offer = 2105 where sword_number = 10;
+
+select * from swords.offers where offer_pending = true;
+
+select sword_number, max(offer_amount) offer_amount from swords.offers group by sword_number;
+
+select offer_number, sword_number, customer_number, offer_amount from swords.offers o
+where offer_amount in (select max(offer_amount) from swords.offers o2 group by sword_number)
+and sword_number in (select sword_number from swords.offers o3 where offer_pending = true);
+
+update swords.offers set offer_accepted = true, offer_pending = false, approved_by_employee_number = 1 where offer_number = 1; 
+delete from swords.offers where offer_pending = true and sword_number = (select sword_number from swords.offers where offer_number = 1);
+
+insert into swords.offers (sword_number, customer_number, offer_amount) values (1, 1, 550);
+
+select * from swords.offers where customer_number = 7 and offer_pending = true;
+
+select max(offer_number) from swords.offers o ;
+---------------------------------------------------------
+create table swords.customer_inventory
+(	name varchar(30),
+	type varchar(30),
+	sword_number int,
+	customer_number int,
+	winning_price numeric(12,2),
+	paid_off boolean default false,
+	finance_setup boolean default false,
+	constraint fk_sword_number foreign key(sword_number) references swords.inventory(sword_number),
+	constraint fk_customer foreign key(customer_number) references swords.customers(customer_number)
+);
+
+insert into swords.customer_inventory (name, type, sword_number, customer_number, winning_price) select si.name, si."type" , so.sword_number , so.customer_number, so.offer_amount 
+from swords.inventory si inner join swords.offers so on si.sword_number = so.sword_number where si.sword_number 
+= (select sword_number from swords.offers where offer_number = 1);
+
+select * from swords.customer_inventory ci where finance_setup = false;
+
+select * from swords.customer_inventory ci where finance_setup = true;
+
+update swords.customer_inventory set paid_off = false where sword_number = 1;
+update swords.customer_inventory set paid_off = true where sword_number = 1;
+
+update swords.customer_inventory set finance_setup = true where sword_number = 1;
+update swords.customer_inventory set finance_setup = false where sword_number = 1;
