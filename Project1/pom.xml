@@ -5,7 +5,7 @@
 	<groupId>com.revature</groupId>
 	<artifactId>ERS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ERS</name>
+  <packaging>war</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,6 +52,11 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
 			<version>3.5.1</version>
+		</dependency>
+				<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-catalina</artifactId>
+			<version>9.0.45</version>
 		</dependency>
 
 	</dependencies>
