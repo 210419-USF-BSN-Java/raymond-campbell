@@ -22,10 +22,10 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		  <ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-			  <a class="nav-link" href="static/employeelogin.html">Employee Login</a>
+			  <a class="nav-link" href="static/employeelogin.jsp">Employee Login</a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="static/managerlogin.thml">Manager Login</a>
+			  <a class="nav-link" href="static/managerlogin.jsp">Manager Login</a>
 			</li>
 		  </ul>
 		</div>
