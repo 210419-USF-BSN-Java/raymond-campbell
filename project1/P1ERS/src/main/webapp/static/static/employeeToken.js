@@ -6,7 +6,7 @@ function requestLogin(){
 	let pass = document.getElementById("password").value;
 	
 	let xhr = new XMLHttpRequest();
-	let url = "http://localhost:8080/AuthDemo/login";
+	let url = "http://localhost:8080/P1ERS/EmployeeLogin";
 	xhr.open("POST", url);
 	
 	xhr.onreadystatechange = function(){
@@ -20,7 +20,7 @@ function requestLogin(){
 			/*
 				if the login is successful, redirects to the home page
 			*/
-			window.location.href="http://localhost:8080/AuthDemo/home"
+			window.location.href="http://localhost:8080/P1ERS/EmployeeLogin";
 		} 
 		else if (xhr.readyState == 4){
 			document.getElementById('message').innerHTML='Incorrect credentials!';

@@ -23,6 +23,7 @@
 	</div>
 	<br>
 	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
+		<script src="static/employeeToken.js"></script>
 	</form>
 </body>
 </html>
