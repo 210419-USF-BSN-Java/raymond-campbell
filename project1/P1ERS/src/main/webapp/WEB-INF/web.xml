@@ -1,7 +1,29 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>P1ERS</display-name>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>Front</display-name>
+  	<servlet-name>Front</servlet-name>
+  	<servlet-class>com.revature.controller.FrontController</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>EmployeeLogin</display-name>
+  	<servlet-name>EmployeeLogin</servlet-name>
+  	<servlet-class>com.revature.servlets.EmployeeLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Front</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeLogin</servlet-name>
+  	<url-pattern>/EmployeeLogin</url-pattern>
+  </servlet-mapping>
+  
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
 </web-app>
