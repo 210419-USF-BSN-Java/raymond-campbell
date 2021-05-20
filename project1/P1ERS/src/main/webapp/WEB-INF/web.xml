@@ -16,6 +16,13 @@
   	<servlet-name>EmployeeLogin</servlet-name>
   	<servlet-class>com.revature.servlets.EmployeeLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ManagerLogin</display-name>
+  	<servlet-name>ManagerLogin</servlet-name>
+  	<servlet-class>com.revature.servlets.ManagerLogin</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -23,6 +30,10 @@
   <servlet-mapping>
   	<servlet-name>EmployeeLogin</servlet-name>
   	<url-pattern>/EmployeeLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerLogin</servlet-name>
+  	<url-pattern>/ManagerLogin</url-pattern>
   </servlet-mapping>
   
 

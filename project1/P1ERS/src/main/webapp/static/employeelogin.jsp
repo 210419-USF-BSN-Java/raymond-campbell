@@ -9,7 +9,7 @@
 <body>
 <h1>Employee Login</h1>
 
-	<form action="EmpLogin" method="post" class="form-horizontal" enctype="multipart/form-data">
+	<form action="http://localhost:8080/P1ERS/EmployeeLogin" method="post" class="form-horizontal" enctype="form-data">
 	<div class="container">
 		<h3>Login</h3>
 		<br>

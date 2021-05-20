@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Manager Login</h1>
+	<form action="http://localhost:8080/P1ERS/ManagerLogin" method="post" class="form-horizontal" enctype="form-data">
 	<div class="container">
 		<h3>Login</h3>
 		<br>
@@ -21,5 +22,7 @@
 	</div>
 	<br>
 	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
+	</div>
+	</form>
 </body>
 </html>
