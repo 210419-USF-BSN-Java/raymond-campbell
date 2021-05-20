@@ -25,9 +25,13 @@ public class ConnectionFactory {
 
 		try {
 			if(connection == null || connection.isClosed()) {
+			Class.forName("org.postgresql.Driver");
 			connection = DriverManager.getConnection(jdbcUrl);
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

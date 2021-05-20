@@ -13,7 +13,7 @@ public class Driver {
 		BasicConfigurator.configure();
 		EmployeeDaoImpl e = new EmployeeDaoImpl();
 		ManagerDaoImpl m = new ManagerDaoImpl();
-		String mUsername = "manager";
+		String mUsername = "employee";
 		String mPassword = "password";
 		User manager = new User(2, "employee", "password", "john", "smith", "johnsmith@reimb.com", 1);
 		String username = "employee";
@@ -27,13 +27,13 @@ public class Driver {
 //		System.out.println(e.viewPendingReimb(2));
 //		e.testMethod();
 //		System.out.println(e.viewResolvedReimb(2));
-//		System.out.println(m.authenticateUser(mUsername, mPassword));
+		System.out.println(e.authenticateUser(mUsername, mPassword));
 //		System.out.println(m.viewAllReimbRequests());
 //		System.out.println(m.viewResolvedRequests());
 //		System.out.println(m.approveReimbRequest(3, 2));
 //		System.out.println(m.denyReimbRequest(3, 3));
 //		System.out.println(m.viewResolvedRequests());
-		System.out.println(m.viewAllEmployees());
+//		System.out.println(m.viewAllEmployees());
 //		System.out.println(e.updateInfo(manager));
 	}
 

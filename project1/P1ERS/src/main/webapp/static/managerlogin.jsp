@@ -13,16 +13,16 @@
 		<h3>Login</h3>
 		<br>
 		<label>Username</label>
-		<input type="text" id="username" class="form-control">
+		<input type="text" id="username" name="username" class="form-control">
 		<br>
 		<label>Password</label>
-		<input type="password" id="password" class="form-control">
+		<input type="password" id="password" name="password" class="form-control">
 		<br>
 		<button id="login-btn" class="btn btn-success">Login</button>
 	</div>
 	<br>
 	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
-		<script src="static/managerToken.js"></script>
+		<script src="../managerToken.js"></script>
 	</div>
 	</form>
 </body>

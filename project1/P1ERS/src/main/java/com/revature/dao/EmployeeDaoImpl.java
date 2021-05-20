@@ -20,7 +20,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	Connection c = ConnectionFactory.getConnectionFromEnv();
 	Scanner sc = new Scanner(System.in);
 	boolean ordering = true;
-	Logger loggy = Logger.getLogger(ProxyAppTwo.class);
+//	Logger loggy = Logger.getLogger(ProxyAppTwo.class);
 	@Override
 	public void login() {}
 
@@ -44,6 +44,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		User u = new User(0, username, password, null, null, null, 0);
 		String sql = "select * from project_one.users u where username = ? and password = ? and role_id = 1;";
 		
+		
 		PreparedStatement ps;
 		try {
 			Connection conn = ConnectionFactory.getConnectionFromEnv();
@@ -63,7 +64,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 				u.setRoleId(rs.getInt(7));
 				
 				if(u.getUserId() > 0) {
-					loggy.info(u.getUsername() + " has logged in.");
+//					loggy.info(u.getUsername() + " has logged in.");
 					return u;
 				}
 				
@@ -75,25 +76,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		
 	}
 	
-	public void testMethod() {
-		String sql = "select user_id from project_one.users u ;";
-		int number;
-		
-		
-		try {
-			PreparedStatement ps = c.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				number = rs.getInt(1);
-				System.out.println(number);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-}
 
 	@Override
 	public boolean submitReimbRequest(Reimbursement reimbursement) {
@@ -212,7 +194,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 				u.setRoleId(rs.getInt(7));
 				
 				if(u.getUserId() > 0) {
-					loggy.info(u.getUsername() + " has logged in.");
+//					loggy.info(u.getUsername() + " has logged in.");
 					return u;
 				}
 				
