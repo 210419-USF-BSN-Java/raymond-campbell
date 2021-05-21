@@ -20,7 +20,7 @@ function requestLogin(){
 			/*
 				if the login is successful, redirects to the home page
 			*/
-			window.location.href="http://localhost:8080/P1ERS/EmployeeLogin";
+			window.location.href="..static/employeeHome.jsp";
 		} 
 		else if (xhr.readyState == 4){
 			document.getElementById('message').innerHTML='Incorrect credentials!';
