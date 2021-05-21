@@ -79,14 +79,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	public boolean submitReimbRequest(Reimbursement reimbursement) {
-		String sql = "insert into project_one.reimbursements (reimb_amount, reimb_description,\r\n"
-				+ "reimb_author) values \r\n"
-				+ "(?, ?, ?);";
+		String sql = "insert into project_one.reimbursements (reimb_amount, reimb_description, reimb_type_id) values (?,?,?);";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setDouble(1, reimbursement.getReimbAmount());
 			ps.setString(2, reimbursement.getReimbDescription());
-			ps.setInt(3, reimbursement.getReimbAuthor());
+			ps.setInt(3, reimbursement.getReimbTypeId());
 			if(ps.executeUpdate() > 0) {
 				return true;
 			}
