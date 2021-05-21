@@ -1,6 +1,8 @@
 package com.revature.servlets;
 
+
 import java.io.IOException;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.dao.EmployeeDao;
 import com.revature.dao.EmployeeDaoImpl;
 import com.revature.models.User;
-
 /**
  * Servlet implementation class EmployeeLogin
  */
@@ -38,10 +39,11 @@ public class EmployeeLogin extends HttpServlet {
 
 			User u = empDao.authenticateUser(username, password);
 
-			if (u.getUserId() > 0) {
+			if (u != null) {
 				String token = u.getUserId() + ":" + u.getRoleId();
 				response.setStatus(200);
 				response.setHeader("Authorization", token);
+				request.getRequestDispatcher("../employeeHome.html");
 			} else {
 				response.sendError(401);
 			}

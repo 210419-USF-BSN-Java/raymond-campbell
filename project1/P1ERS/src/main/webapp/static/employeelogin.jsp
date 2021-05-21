@@ -9,7 +9,7 @@
 <body>
 <h1>Employee Login</h1>
 
-	<form action="http://localhost:8080/P1ERS/EmployeeLogin" method="post" class="form-horizontal" enctype="form-data">
+	<form action="../EmployeeLogin" method="post" class="form-horizontal" enctype="form-data">
 	<div class="container">
 		<h3>Login</h3>
 		<br>
@@ -22,6 +22,7 @@
 		<button type="submit" class="btn btn-success">Login</button>
 	</div>
 	<br>
+	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
 		<script src="../employeeToken.js"></script>
 	</form>
 </body>
