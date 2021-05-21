@@ -23,6 +23,13 @@
   	<servlet-name>ManagerLogin</servlet-name>
   	<servlet-class>com.revature.servlets.ManagerLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ReimbursementSubmit</display-name>
+  	<servlet-name>ReimbursementSubmit</servlet-name>
+  	<servlet-class>com.revature.servlets.ReimbursementSubmit</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -34,6 +41,10 @@
   <servlet-mapping>
   	<servlet-name>ManagerLogin</servlet-name>
   	<url-pattern>/ManagerLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReimbursementSubmit</servlet-name>
+  	<url-pattern>/ReimbursementSubmit</url-pattern>
   </servlet-mapping>
   
 

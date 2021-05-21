@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding: 15px 25px;
+   background-color: rgb(172, 162, 162);
+   color: white;
+   text-align: center;
+}
+</style>
+</head>
+<body>
+    <h1>Reimbursement Submission Page</h1>
+	<div class="container">
+	<form class="form-horizontal" enctype="form-data">
+		<label>Reimbursement Description (less than 20 characters):</label><br>
+		<input type="text" id="description" name="description" class="form-control"><br>
+		<label>Reimbursement Amount:</label><br>
+		<input type="number" id="amount" name="amount" min="0"><br>
+		<input type="radio" id="type" name="type" value="1" class="form-control">
+		<label>Travel</label><br>
+		<input type="radio" id="type" name="type" value="2" class="form-control">
+		<label>Lodging</label><br>
+		<input type="radio" id="type" name="type" value="3" class="form-control">
+		<label>Meal</label><br>
+		<input type="radio" id="type" name="type" value="4" class="form-control">
+		<label>Other</label><br>
+		<button type="submit" id="reimb-subm" class="btn btn-success">Submit</button>
+	</div>
+	<br>
+	<div id="message" style="margin:auto;width: 50%;color:red" ></div>
+			<script src="reimbursementSubmission.js"></script>
+
+	  </form>
+
+	  <div class="footer">
+		<a href="employeeHome.html">Employee Home Page</a>
+	  </div>
+</body>
+</html>

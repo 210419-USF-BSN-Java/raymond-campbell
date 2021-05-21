@@ -38,12 +38,11 @@ public class EmployeeLogin extends HttpServlet {
 		String password = request.getParameter("password");
 
 			User u = empDao.authenticateUser(username, password);
-
+			
 			if (u != null) {
 				String token = u.getUserId() + ":" + u.getRoleId();
 				response.setStatus(200);
 				response.setHeader("Authorization", token);
-				request.getRequestDispatcher("../employeeHome.html");
 			} else {
 				response.sendError(401);
 			}

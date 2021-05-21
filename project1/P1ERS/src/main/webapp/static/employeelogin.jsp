@@ -9,7 +9,7 @@
 <body>
 <h1>Employee Login</h1>
 
-	<form action="../EmployeeLogin" method="post" class="form-horizontal" enctype="form-data">
+	<form  class="form-horizontal" enctype="form-data">
 	<div class="container">
 		<h3>Login</h3>
 		<br>
@@ -19,11 +19,11 @@
 		<label>Password</label>
 		<input type="password" id="password" name="password" class="form-control">
 		<br>
-		<button type="submit" class="btn btn-success">Login</button>
+		<button type="submit" id="login-btn" class="btn btn-success">Login</button>
 	</div>
 	<br>
 	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
-		<script src="../employeeToken.js"></script>
+		<script src="employeeToken.js"></script>
 	</form>
 </body>
 </html>

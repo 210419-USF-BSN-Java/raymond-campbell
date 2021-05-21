@@ -1,6 +1,7 @@
+
 document.getElementById("login-btn").addEventListener("click", requestLogin);
-console.log("inside token.js")
-function requestLogin(){
+function requestLogin(e){
+    e.preventDefault();
 	
 	let user = document.getElementById("username").value;
 	let pass = document.getElementById("password").value;
@@ -8,12 +9,11 @@ function requestLogin(){
 	let xhr = new XMLHttpRequest();
 	let url = "http://localhost:8080/P1ERS/EmployeeLogin";
 	xhr.open("POST", url);
-	
+    
+
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4 && xhr.status == 200){
-			console.log("ahi");
 			let auth = xhr.getResponseHeader("Authorization");
-			console.log(auth);
 			/*
 				session is a storage that lasts for that specific page session(tab)
 				here we store our auth token
@@ -22,9 +22,9 @@ function requestLogin(){
 			/*
 				if the login is successful, redirects to the home page
 			*/
-			//window.location.href="http://localhost:8080/P1ERS/static/employeeHome.html";
+			window.location.href="http://localhost:8080/P1ERS/static/employeeHome.html";
 		} 
-		else if (xhr.readyState == 4){
+		else if (xhr.readyState == 4){                            
 			document.getElementById('message').innerHTML='Incorrect credentials!';
 		}
 	}

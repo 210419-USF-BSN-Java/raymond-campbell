@@ -27,7 +27,7 @@ public class Driver {
 //		System.out.println(e.viewPendingReimb(2));
 //		e.testMethod();
 //		System.out.println(e.viewResolvedReimb(2));
-		System.out.println(e.authenticateUser(mUsername, mPassword));
+//		System.out.println(e.authenticateUser(mUsername, mPassword));
 //		System.out.println(m.viewAllReimbRequests());
 //		System.out.println(m.viewResolvedRequests());
 //		System.out.println(m.approveReimbRequest(3, 2));
