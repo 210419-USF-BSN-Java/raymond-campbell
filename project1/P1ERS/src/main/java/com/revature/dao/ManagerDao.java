@@ -17,6 +17,7 @@ public interface ManagerDao {
 	List<Reimbursement> viewResolvedRequests();
 	List<User> viewAllEmployees();
 	Reimbursement viewReimbRequestById(int Id);
+	User getUserById(int userId);
 	void submitReimbReceipt();
 
 }

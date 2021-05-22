@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Manager Login</h1>
-	<form action="http://localhost:8080/P1ERS/ManagerLogin" method="post" class="form-horizontal" enctype="form-data">
+<form  class="form-horizontal" enctype="form-data">
 	<div class="container">
 		<h3>Login</h3>
 		<br>
@@ -18,12 +18,11 @@
 		<label>Password</label>
 		<input type="password" id="password" name="password" class="form-control">
 		<br>
-		<button id="login-btn" class="btn btn-success">Login</button>
+		<button type="submit" id="manager-login-btn" class="btn btn-success">Login</button>
 	</div>
 	<br>
 	<div id="message" style=" margin: auto;width: 50%;color:red" > </span>
-		<script src="../managerToken.js"></script>
-	</div>
+		<script src="managerToken.js"></script>
 	</form>
 </body>
 </html>

@@ -30,10 +30,20 @@
 
 	  <ul>
 		<li><a href="SubmitReimbursement.html">Submit Reimbursement Request</a></li>
-		<li><a href="ReviewReimbursements.html">View Pending Reimbursement Requests</a></li>
-		<li><a href="ViewResolvedreimbursements.html">View Resolved Reimbursement Requests</a></li>
-		<li><a href="AccountInformation.html">View Account Information</a></li>
+		
+		<li><button type="submit" id="pending-btn" class="btn btn-pending">View Pending Requests</button></li>
+		<script src="viewPending.js"></script>
+		
+		<li><button type="submit" id="resolved-btn" class="btn btn-pending">View Resolved Requests</button></li>
+		<script src="viewResolved.js"></script>
+		
+		<li><button type="submit" id="view-info-btn" class="btn btn-pending">View My Account</button></li>
+		<script src="viewMyAccount.js"></script>
+
+		<li><a href="..\index.jsp">Log Out</a></li>
 	  </ul>
+
+	  <div id="pending-message" style=" margin: auto;width: 50%;color:red" > </span>
 
 	  <a href="employeeFooter.html"></a>
 

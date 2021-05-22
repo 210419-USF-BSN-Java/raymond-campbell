@@ -58,8 +58,13 @@ public class ReimbursementSubmit extends HttpServlet {
 		String description = request.getParameter("description");
 		Integer amount = Integer.parseInt(request.getParameter("amount"));
 		Integer type = Integer.parseInt(request.getParameter("type"));
-		System.out.println(description + amount + type);
-		Reimbursement draft = new Reimbursement(0,amount, description, 0, 0, 0, type);
+		String token = request.getParameter("empId");
+		String[] tokenArr = token.split(":");
+		Integer authorId = Integer.parseInt(tokenArr[0]);
+		
+		
+		System.out.println(description + amount + type + authorId);
+		Reimbursement draft = new Reimbursement(0,amount, description, authorId, 0, 0, type);
 		boolean submitted = empDao.submitReimbRequest(draft);
 		
 		if (submitted) {

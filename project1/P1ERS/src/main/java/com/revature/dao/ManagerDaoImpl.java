@@ -215,4 +215,38 @@ public class ManagerDaoImpl implements ManagerDao{
 		
 		return false;
 	}
+
+	@Override
+	public User getUserById(int userId) {
+		
+		User u = new User(0, null, null, null, null, null, 0);
+		String sql = "select * from project_one.users u where user_id = ?;";
+		
+		PreparedStatement ps;
+		try {
+			Connection conn = ConnectionFactory.getConnectionFromEnv();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, userId);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				u.setUserId(rs.getInt(1));
+				u.setPassword(rs.getString(3));
+				u.setFirstName(rs.getString(4));
+				u.setLastName(rs.getString(5));
+				u.setEmail(rs.getString(6));
+				u.setRoleId(rs.getInt(7));
+				
+				if(u.getUserId() > 0) {
+//					loggy.info(u.getUsername() + " has logged in.");
+					return u;
+				}
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 }

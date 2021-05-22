@@ -30,6 +30,27 @@
   	<servlet-name>ReimbursementSubmit</servlet-name>
   	<servlet-class>com.revature.servlets.ReimbursementSubmit</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewPending</display-name>
+  	<servlet-name>ViewPending</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewPending</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewResolved</display-name>
+  	<servlet-name>ViewResolved</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewResolved</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewAccount</display-name>
+  	<servlet-name>ViewAccount</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewAccount</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -45,6 +66,18 @@
   <servlet-mapping>
   	<servlet-name>ReimbursementSubmit</servlet-name>
   	<url-pattern>/ReimbursementSubmit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewPending</servlet-name>
+  	<url-pattern>/ViewPending</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewResolved</servlet-name>
+  	<url-pattern>/ViewResolved</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAccount</servlet-name>
+  	<url-pattern>/ViewAccount</url-pattern>
   </servlet-mapping>
   
 
