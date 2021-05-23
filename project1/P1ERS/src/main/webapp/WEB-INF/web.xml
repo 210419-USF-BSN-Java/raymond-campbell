@@ -58,6 +58,20 @@
   	<servlet-name>ManagePending</servlet-name>
   	<servlet-class>com.revature.servlets.ManagePending</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewAllEmployees</display-name>
+  	<servlet-name>ViewAllEmployees</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewAllEmployees</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ManageResolved</display-name>
+  	<servlet-name>ManageResolved</servlet-name>
+  	<servlet-class>com.revature.servlets.ManageResolved</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -89,6 +103,14 @@
   <servlet-mapping>
   	<servlet-name>ManagePending</servlet-name>
   	<url-pattern>/ManagePending</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAllEmployees</servlet-name>
+  	<url-pattern>/ViewAllEmployees</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManageResolved</servlet-name>
+  	<url-pattern>/ManageResolved</url-pattern>
   </servlet-mapping>
   
 

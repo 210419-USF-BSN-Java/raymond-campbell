@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   padding: 15px 25px;
-   background-color: rgb(172, 162, 162);
-   color: white;
-   text-align: center;
-}
-</style>
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       padding: 15px 25px;
+       background-color: rgb(172, 162, 162);
+       color: white;
+       text-align: center;
+    }
+    </style>
+    <title>JSON data to HTML Table using Ajax Jquery getJSOn method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+
+    </head>
 <body>
-    <h1>Reimbursement Submission Page</h1>
-	<div class="container">
 
-		<hr class="book-primary">
+<h2>Employee List</h2>
 
-		<table class="table table-striped table-hover table-responsive pubhub-datatable">
-			<thead>
-				<tr>
-					<td>ISBN-13:</td>
-					<td>Title:</td>
-					<td>Author:</td>
-					<td>Publish Date:</td>
-					<td>Price:</td>
-					<td></td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="book" items="${books}">
-					<tr>
-						<td><c:out value="${book.isbn13}" /></td>
-						<td><c:out value="${book.title}" /></td>
-						<td><c:out value="${book.author}" /></td>
-						<td><c:out value="${book.publishDate}" /></td>
-						<td><fmt:formatNumber value="${book.price }" type="CURRENCY"/></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+<div >
+            
+    <table id="manage-resolved-list-table"class="form-control mb-1">
+            <tr>
+                <th>Amount Requested:</th>
+                <th>Reimbursement Description:</th>
+                <th>Reimbursement Number:</th>
+                <th>Reimbursement Resolver:</th>
+            </tr>
 
-	  <div class="footer">
-		<a href="employeeHome.html">Employee Home Page</a>
-	  </div>
+    </table>
+
+ </div>
+
+
+<script 
+src="manage-resolved.js"></script>
+</script>
+
+
+<div class="footer">
+    <a href="managerHome.html">Manager Home Page</a>
+  </div>
 </body>
 </html>

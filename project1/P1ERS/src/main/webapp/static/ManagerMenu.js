@@ -45,6 +45,6 @@ function logOut(){
 
     localStorage.removeItem("token");
 
-    window.location.href="http://localhost:8080/ERS/index.html";
+    window.location.href="http://localhost:8080/P1ERS/index.jsp";
 
 }
