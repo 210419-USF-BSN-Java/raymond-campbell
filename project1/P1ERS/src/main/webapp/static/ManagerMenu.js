@@ -1,7 +1,7 @@
-let token = localStorage.getItem("token");
+let token = localStorage.getItem("Authorization");
 
 if(!token){
-	window.location.href="http://localhost:8080/ERS/";
+	window.location.href="http://localhost:8080/P1ERS/index.jsp";
 } else {
 	
 	let userInfo = token.split(":");
@@ -11,34 +11,34 @@ if(!token){
 		welcome.innerText="Welcome to the ERS, " + userInfo[1];
 
 	} else if(userInfo[2] == 1){
-		window.location.href="http://localhost:8080/ERS/employee.html";
+		window.location.href="http://localhost:8080/P1ERS/static/employeeHome.html";
 	}
 }
 
-document.getElementById("viewAllById").addEventListener("click", viewAllById);
-document.getElementById("viewPending").addEventListener("click", viewPending);
-document.getElementById("viewResolved").addEventListener("click", viewResolved);
-document.getElementById("viewEmployees").addEventListener("click", viewEmployees);
-document.getElementById("logout").addEventListener("click", logOut);
+document.getElementById("view-requests-by-emp-btn").addEventListener("click", viewAllByEmp);
+document.getElementById("manage-pending-btn").addEventListener("click", viewPending);
+document.getElementById("view-resolved-btn").addEventListener("click", viewResolved);
+document.getElementById("view-employees-btn").addEventListener("click", viewEmployees);
+document.getElementById("logout-btn").addEventListener("click", logOut);
 
-function viewAllById(){
+function viewAllByEmp(){
 
-    window.location.href="http://localhost:8080/ERS/managerMenu/viewAllRequestById.html";
+    window.location.href="http://localhost:8080/P1ERS/static/ViewRequestsByEmployee.html";
 }
 
 function viewPending(){
 
-    window.location.href="http://localhost:8080/ERS/managerMenu/viewAllPending.html";
+    window.location.href="http://localhost:8080/P1ERS/static/viewManagePending.html";
 }
 
 function viewResolved(){
 
-    window.location.href="http://localhost:8080/ERS/managerMenu/viewAllResolved.html";
+    window.location.href="http://localhost:8080/P1ERS/static/ViewResolvedreimbursements.html";
 }
 
 function viewEmployees(){
 
-    window.location.href="http://localhost:8080/ERS/managerMenu/viewAllEmployee.html";
+    window.location.href="http://localhost:8080/P1ERS/static/ViewAllEmployees.html";
 }
 
 function logOut(){

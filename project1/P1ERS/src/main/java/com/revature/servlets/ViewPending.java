@@ -28,6 +28,23 @@ public class ViewPending extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Inside the GET pending servlet");
+		
+		String token = request.getParameter("empId");
+		String[] tokenArr = token.split(":");
+		Integer empId = Integer.parseInt(tokenArr[0]);	
+		List<Reimbursement> pending = empDao.viewPendingReimb(empId);
+		
+		if(pending.size()>0) {
+		String pendingList = mapper.writeValueAsString(pending);
+		response.setStatus(200);
+		response.setHeader("PendingList", pendingList);
+	} else {
+		response.sendError(401);
+	}
+
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

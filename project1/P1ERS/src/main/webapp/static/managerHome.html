@@ -27,21 +27,23 @@
 <body>
 	<h1>Manager Home</h1>
 
-    <q>A reimbursement a day keeps the employees at bay</q>
-
-
 	  <ul>
 		<li><button type="submit" id="manage-pending-btn" class="btn btn-pending">Manage Pending Requests</button></li>
-		<script src="manage-pending.js"></script>	
-		<li><a href="ViewManagedReimbursements.html">View Resolved Reimbursement Requests</a></li>
-		<li><a href="ViewAllEmployees.html">View All Employees</a></li>
-        <li><a href="ViewRequestsByEmployee.html">View Requests by Employee</a></li>
-		<li><a href="..\index.jsp">Log Out</a></li>
+		
+		<li><button type="submit" id="view-resolved-btn" class="btn btn-pending">View Resolved Reimbursement Requests</button></li>
+		
+		<li><button type="submit" id="view-employees-btn" class="btn btn-pending">View All Employees</button></li>
+		
+		<li><button type="submit" id="view-requests-by-emp-btn" class="btn btn-pending">View Requests by Employee</button></li>
+
+		<li><button type="submit" id="logout-btn" class="btn btn-pending">Log Out</button></li>
 	  </ul>
 
 	  <div id="pending-message" style=" margin: auto;width: 50%;color:red" > </span>
 
 	  <a href="managerFooter.html"></a>
+
+	  <script src="ManagerMenu.js"></script>
 
 </body>
 </html>

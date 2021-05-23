@@ -23,20 +23,22 @@
 
 <h2>Resolved Reimbursements</h2>
 
-<p id="demo"></p>
+<div >
+            
+    <table id="resolved-list-table"class="form-control mb-1">
+            <tr>
+                <th>Amount Requested:</th>
+                <th>Reimbursement Description:</th>
+                <th>Reimbursement Number:</th>
+            </tr>
 
-<script>
-let txt = sessionStorage.getItem("ResolvedList");
-let obj = JSON.parse(txt);
-var i,j,x="";
-for (i in txt) {
-    x += "<h2>" + txt[i].reimbId + "</h2>";
-    for (j in txt[i].reimbAmount) {
-        x += txt[i].reimbAmount + "<br>";
-    }
-}
+    </table>
 
-document.getElementById("demo").innerHTML = txt;
+ </div>
+
+
+<script 
+src="viewResolved.js"></script>
 </script>
 
 
