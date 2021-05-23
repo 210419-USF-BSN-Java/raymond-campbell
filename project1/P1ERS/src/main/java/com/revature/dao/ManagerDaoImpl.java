@@ -20,7 +20,7 @@ public class ManagerDaoImpl implements ManagerDao{
 	Connection c = ConnectionFactory.getConnectionFromEnv();
 	Scanner sc = new Scanner(System.in);
 	boolean ordering = true;
-	Logger loggy = Logger.getLogger(ProxyAppTwo.class);
+//	Logger loggy = Logger.getLogger(ProxyAppTwo.class);
 	@Override
 	public void login() {
 		// TODO Auto-generated method stub
@@ -54,7 +54,7 @@ public class ManagerDaoImpl implements ManagerDao{
 				System.out.println(u.getUserId());
 				
 				if(u.getUserId() > 0) {
-					loggy.info(u.getUsername() + " has logged in.");
+//					loggy.info(u.getUsername() + " has logged in.");
 					return u;
 				}
 				

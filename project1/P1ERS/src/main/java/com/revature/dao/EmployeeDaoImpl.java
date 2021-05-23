@@ -186,6 +186,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			
 			while(rs.next()) {
 				u.setUserId(rs.getInt(1));
+				u.setUsername(rs.getString(2));
 				u.setPassword(rs.getString(3));
 				u.setFirstName(rs.getString(4));
 				u.setLastName(rs.getString(5));

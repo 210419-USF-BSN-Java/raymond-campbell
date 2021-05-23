@@ -23,27 +23,25 @@
 
 <h2>Pending Reimbursements</h2>
 
-<div >
-            
-    <table id="pending-list-table"class="form-control mb-1">
-            <tr>
-                <th>Amount Requested:</th>
-                <th>Reimbursement Description:</th>
-                <th>Reimbursement Number:</th>
-            </tr>
+<p id="demo"></p>
 
-    </table>
+<script>
+let txt = sessionStorage.getItem("MangePendingList");
+let obj = JSON.parse(txt);
+var i,j,x="";
+for (i in txt) {
+    x += "<h2>" + txt[i].reimbId + "</h2>";
+    for (j in txt[i].reimbAmount) {
+        x += txt[i].reimbAmount + "<br>";
+    }
+}
 
- </div>
-
-
-<script 
-src="viewPending.js"></script>
+document.getElementById("demo").innerHTML = txt;
 </script>
 
 
 <div class="footer">
-    <a href="employeeHome.html">Employee Home Page</a>
+    <a href="managerHome.html">Manager Home Page</a>
   </div>
 </body>
 </html>

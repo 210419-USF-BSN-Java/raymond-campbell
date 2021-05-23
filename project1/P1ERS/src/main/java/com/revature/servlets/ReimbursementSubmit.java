@@ -56,6 +56,7 @@ public class ReimbursementSubmit extends HttpServlet {
 		System.out.println("Inside sub servlet");
 
 		String description = request.getParameter("description");
+		System.out.println(request.getParameter("amount"));
 		Integer amount = Integer.parseInt(request.getParameter("amount"));
 		Integer type = Integer.parseInt(request.getParameter("type"));
 		String token = request.getParameter("empId");

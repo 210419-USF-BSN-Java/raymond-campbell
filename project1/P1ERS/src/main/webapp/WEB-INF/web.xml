@@ -51,6 +51,13 @@
   	<servlet-name>ViewAccount</servlet-name>
   	<servlet-class>com.revature.servlets.ViewAccount</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ManagePending</display-name>
+  	<servlet-name>ManagePending</servlet-name>
+  	<servlet-class>com.revature.servlets.ManagePending</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -78,6 +85,10 @@
   <servlet-mapping>
   	<servlet-name>ViewAccount</servlet-name>
   	<url-pattern>/ViewAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagePending</servlet-name>
+  	<url-pattern>/ManagePending</url-pattern>
   </servlet-mapping>
   
 

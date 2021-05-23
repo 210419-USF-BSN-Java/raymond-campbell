@@ -12,9 +12,28 @@ function requestLogin(){
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4 && xhr.status == 200){
 			let PendingList = xhr.getResponseHeader("PendingList");
-			sessionStorage.setItem("PendingList", PendingList);
+			// sessionStorage.setItem("PendingList", PendingList);
+
+			let jsonList = JSON.parse(PendingList);
+
+			let content = document.getElementById("pending-list-table");
+			console.log(content);
+
+
+			console.log(jsonList);
+			console.log(jsonList[0])
+			console.log(jsonList[0].reimbAmount);
+			for(i = 0; i < jsonList.length; i++){
+				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + "</td>";
+			    console.log(request);
+				content.insertAdjacentHTML('beforeend', request);
+				window.location.href="viewMyPending.html";
+			}
+
 			console.log("successfully queried the DB");
 			console.log(sessionStorage.getItem("PendingList"));
+
+
 
 			window.location.href="viewMyPending.html";
 		} 
