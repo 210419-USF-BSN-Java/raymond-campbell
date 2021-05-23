@@ -1,7 +1,7 @@
+viewResolved();
 
-document.getElementById("resolved-btn").addEventListener("click", requestLogin);
 console.log("inside resolved.js")
-function requestLogin(){
+function viewResolved(){
 	
 	let empId = localStorage.getItem("Authorization");
 	
@@ -12,11 +12,16 @@ function requestLogin(){
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4 && xhr.status == 200){
 			let ResolvedList = xhr.getResponseHeader("ResolvedList");
-			sessionStorage.setItem("ResolvedList", ResolvedList);
-			console.log("successfully queried the DB");
-			console.log(sessionStorage.getItem("ResolvedList"));
 
-			window.location.href="viewMyResolved.html";
+			let jsonList = JSON.parse(ResolvedList);
+
+			let content = document.getElementById("resolved-list-table");
+
+			for(i = 0; i < jsonList.length; i++){
+				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + "</td>";
+			    console.log(request);
+				content.insertAdjacentHTML('beforeend', request);
+			}
 		} 
 		else if (xhr.readyState == 4){
 			document.getElementById('resolved-message').innerHTML='You have no resolved reimbursements.';

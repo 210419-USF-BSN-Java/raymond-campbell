@@ -33,7 +33,7 @@ public class ViewPending extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Inside sub servlet");
+		System.out.println("Inside pending servlet");
 		
 		String token = request.getParameter("empId");
 		String[] tokenArr = token.split(":");

@@ -41,12 +41,14 @@ public class ViewResolved extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("Inside Resolved Servlet");
 		String token = request.getParameter("empId");
 		String[] tokenArr = token.split(":");
 		Integer empId = Integer.parseInt(tokenArr[0]);	
 		List<Reimbursement> pending = empDao.viewResolvedReimb(empId);
 		
 		if(pending.size()>0) {
+		System.out.println("Successfully acquired resolved list");
 		String resolvedList = mapper.writeValueAsString(pending);
 		response.setStatus(200);
 		response.setHeader("ResolvedList", resolvedList);
