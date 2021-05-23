@@ -6,7 +6,7 @@ function viewResolved() {
 	let empId = localStorage.getItem("Authorization");
 	
 	let xhr = new XMLHttpRequest();
-	let url = "http://localhost:8080/P1ERS/ViewResolved";
+	let url = "http://localhost:8080/P1ERS/ManageResolved";
 	xhr.open("POST", url);
 	
 	xhr.onreadystatechange = function(){
@@ -16,12 +16,14 @@ function viewResolved() {
 
 			let jsonList = JSON.parse(ResolvedList);
 
+			console.log(jsonList);
+
 			let content = document.getElementById("manage-resolved-list-table");
 			console.log(content);
 
 
 			for(i = 0; i < jsonList.length; i++){
-				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + jsonList[i].reimbResolver + "</td>";
+				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + "</td><td>" + jsonList[i].reimbResolver + "</td>";
 			    console.log(request);
 				content.insertAdjacentHTML('beforeend', request);
 			}

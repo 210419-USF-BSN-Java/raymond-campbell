@@ -35,6 +35,7 @@ public class Driver {
 //		System.out.println(m.viewResolvedRequests());
 //		System.out.println(m.viewAllEmployees());
 //		System.out.println(e.updateInfo(manager));
+		System.out.println(m.viewReimbRequestById(2));
 	}
 
 }

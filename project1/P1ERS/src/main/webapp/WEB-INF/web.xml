@@ -72,6 +72,27 @@
   	<servlet-name>ManageResolved</servlet-name>
   	<servlet-class>com.revature.servlets.ManageResolved</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ApproveRequest</display-name>
+  	<servlet-name>ApproveRequest</servlet-name>
+  	<servlet-class>com.revature.servlets.ApproveRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DenyRequest</display-name>
+  	<servlet-name>DenyRequest</servlet-name>
+  	<servlet-class>com.revature.servlets.DenyRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewRequestHistory</display-name>
+  	<servlet-name>ViewRequestHistory</servlet-name>
+  	<servlet-class>com.revature.servlets.ViewRequestHistory</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Front</servlet-name>
   	<url-pattern>/</url-pattern>
@@ -111,6 +132,18 @@
   <servlet-mapping>
   	<servlet-name>ManageResolved</servlet-name>
   	<url-pattern>/ManageResolved</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApproveRequest</servlet-name>
+  	<url-pattern>/ApproveRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DenyRequest</servlet-name>
+  	<url-pattern>/DenyRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewRequestHistory</servlet-name>
+  	<url-pattern>/ViewRequestHistory</url-pattern>
   </servlet-mapping>
   
 

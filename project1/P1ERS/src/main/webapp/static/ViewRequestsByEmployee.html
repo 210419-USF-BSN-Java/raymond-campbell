@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       padding: 15px 25px;
+       background-color: rgb(172, 162, 162);
+       color: white;
+       text-align: center;
+    }
+    </style>
+    <title>JSON data to HTML Table using Ajax Jquery getJSOn method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+
+    </head>
+<body>
+
+<h2>Employee Request History</h2>
+
+<div >
+            
+    <table id="pending-list-table"class="form-control mb-1">
+            <tr>
+                <th>Amount Requested:</th>
+                <th>Reimbursement Description:</th>
+                <th>Reimbursement Number:</th>
+            </tr>
+
+    </table>
+
+ </div>
+
+ <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="requestAction">
+        <label>Search by Employee Number: </label>
+        <input type="number" id = "employeeID" class="form-control mb-3">
+        <button id = "check"class="btn-primary" type="submit">Check Requests</button>
+    </div>
+
+
+
+<script 
+src="viewRequestsByEmployee.js"></script>
+</script>
+
+
+<div class="footer">
+    <a href="managerHome.html">Manager Home Page</a>
+  </div>
+</body>
+</html>

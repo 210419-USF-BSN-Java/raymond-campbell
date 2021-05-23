@@ -152,26 +152,30 @@ public class ManagerDaoImpl implements ManagerDao{
 	}
 
 	@Override
-	public Reimbursement viewReimbRequestById(int Id) {
-		String sql = "select * from project_one.reimbursements r where reimb_id = ?;";
+	public List<Reimbursement> viewReimbRequestById(int Id) {
+		String sql = "select * from project_one.reimbursements r where reimb_author = ?;";
+		List<Reimbursement> result = new ArrayList<>();
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setInt(1, Id);
 			ResultSet rs = ps.executeQuery();
-			Reimbursement result = new Reimbursement(
+			while(rs.next()) {
+				result.add(new Reimbursement(
+			
 					rs.getInt(1),
 					rs.getDouble(2),
 					rs.getString(5),
 					rs.getInt(7),
 					rs.getInt(8),
 					rs.getInt(9),
-					rs.getInt(10));
+					rs.getInt(10)));
+			}
 			return result;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return result;
 	}
 
 	@Override

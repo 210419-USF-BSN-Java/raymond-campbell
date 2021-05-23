@@ -43,7 +43,7 @@ function viewEmployees(){
 
 function logOut(){
 
-    localStorage.removeItem("token");
+    localStorage.removeItem("Authorization");
 
     window.location.href="http://localhost:8080/P1ERS/index.jsp";
 
