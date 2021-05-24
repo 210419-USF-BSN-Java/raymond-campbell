@@ -46,7 +46,7 @@ function viewPending() {
 function AcceptRequest(e){
     e.preventDefault();
     let empId = localStorage.getItem("Authorization");
-	let requestId = document.getElementById("number").value;
+	let requestId = document.getElementById("accept-number").value;
 	
 	let xhr = new XMLHttpRequest();
 	let url = "http://localhost:8080/P1ERS/ApproveRequest";
@@ -79,7 +79,7 @@ function AcceptRequest(e){
 function RejectRequest(e){
     e.preventDefault();
     let empId = localStorage.getItem("Authorization");
-	let requestId = document.getElementById("number").value;
+	let requestId = document.getElementById("reject-number").value;
 	
 	let xhr = new XMLHttpRequest();
 	let url = "http://localhost:8080/P1ERS/DenyRequest";

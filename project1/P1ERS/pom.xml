@@ -57,6 +57,14 @@
 			<artifactId>tomcat-catalina</artifactId>
 			<version>9.0.45</version>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/org.scalatestplus/junit-4-12 -->
+<dependency>
+    <groupId>org.scalatestplus</groupId>
+    <artifactId>junit-4-12_2.13</artifactId>
+    <version>3.1.2.0</version>
+    <scope>test</scope>
+</dependency>
+
 	</dependencies>
 
   <build>

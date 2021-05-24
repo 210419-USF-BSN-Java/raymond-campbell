@@ -3,22 +3,19 @@ viewPending();
 console.log("inside pending.js")
 	
 function viewPending() {
-	let empId = localStorage.getItem("Authorization");
-	
+
+	let empId = localStorage.getItem("Authorization");	
 	let xhr = new XMLHttpRequest();
 	let url = "http://localhost:8080/P1ERS/ViewPending";
 	xhr.open("POST", url);
 	
-	xhr.onreadystatechange = function(){
+	xhr.onreadystatechange = function() {
 		if(xhr.readyState == 4 && xhr.status == 200){
 			let PendingList = xhr.getResponseHeader("PendingList");
-			// sessionStorage.setItem("PendingList", PendingList);
 
 			let jsonList = JSON.parse(PendingList);
 
 			let content = document.getElementById("pending-list-table");
-			console.log(content);
-
 
 			for(i = 0; i < jsonList.length; i++){
 				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + "</td>";
@@ -32,10 +29,6 @@ function viewPending() {
 		}
 	}
 
-	
-	/*
-		Allows us to send form data as a single block in the body rather than as query params in the URL
-	*/
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	let requestBody = `empId=${empId}`;
 	xhr.send(requestBody);

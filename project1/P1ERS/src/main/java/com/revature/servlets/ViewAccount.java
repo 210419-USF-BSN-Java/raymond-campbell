@@ -42,7 +42,7 @@ public class ViewAccount extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Inside sub servlet");
+		System.out.println("Inside view Account");
 		
 		String token = request.getParameter("empId");
 		String[] tokenArr = token.split(":");
@@ -50,9 +50,11 @@ public class ViewAccount extends HttpServlet {
 		User account = empDao.getUserById(empId);
 		
 		if(account != null) {
+		System.out.println("successfully retrieved personal user account");
 		String userAccount = mapper.writeValueAsString(account);
 		response.setStatus(200);
 		response.setHeader("UserAccount", userAccount);
+		System.out.println(response.getStatus());
 	} else {
 		response.sendError(401);
 	}

@@ -27,8 +27,21 @@ public class DenyRequest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		System.out.println("Inside deny servlet");
+		Integer requestId = Integer.parseInt(request.getParameter("requestId"));
+		String token = request.getParameter("empId");
+		String[] tokenArr = token.split(":");
+		Integer authorId = Integer.parseInt(tokenArr[0]);
+	
+		boolean submitted = manDao.denyReimbRequest(authorId, requestId);
+		
+		if (submitted) {
+			response.getWriter().println("Successful submission");
+			response.setStatus(200);
+		} else {
+			response.sendError(401);
+		}
 	}
 
 	/**
@@ -42,7 +55,7 @@ public class DenyRequest extends HttpServlet {
 		String[] tokenArr = token.split(":");
 		Integer authorId = Integer.parseInt(tokenArr[0]);
 	
-		boolean submitted = manDao.approveReimbRequest(authorId, requestId);
+		boolean submitted = manDao.denyReimbRequest(authorId, requestId);
 		
 		if (submitted) {
 			response.getWriter().println("Successful submission");

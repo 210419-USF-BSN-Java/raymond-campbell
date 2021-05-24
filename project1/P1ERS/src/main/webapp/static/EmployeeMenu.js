@@ -18,8 +18,8 @@ if(!token){
 document.getElementById("submit-request-btn").addEventListener("click", submitRequest);
 document.getElementById("pending-btn").addEventListener("click", viewPending);
 document.getElementById("resolved-btn").addEventListener("click", viewResolved);
-document.getElementById("view-info-btn").addEventListener("click", viewEmployees);
-document.getElementById("logout").addEventListener("click", logOut);
+document.getElementById("view-info-btn").addEventListener("click", viewAccount);
+document.getElementById("logout-btn").addEventListener("click", logOut);
 
 function submitRequest(){
 
@@ -36,7 +36,7 @@ function viewResolved(){
     window.location.href="http://localhost:8080/P1ERS/static/viewMyResolved.html";
 }
 
-function viewEmployees(){
+function viewAccount(){
 
     window.location.href="http://localhost:8080/P1ERS/static/viewMyAccount.html";
 }
