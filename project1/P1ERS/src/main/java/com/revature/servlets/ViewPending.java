@@ -18,7 +18,6 @@ import com.revature.models.Reimbursement;
  */
 public class ViewPending extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	EmployeeDao empDao = new EmployeeDaoImpl();
 	ObjectMapper mapper = new ObjectMapper();
     /**

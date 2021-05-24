@@ -1,6 +1,7 @@
 
 viewAccount();
 console.log("Inside view my account.js")
+
 function viewAccount(){
 	
 	let empId = localStorage.getItem("Authorization");
@@ -11,7 +12,7 @@ function viewAccount(){
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4 && xhr.status == 200){
 			let UserAccount = xhr.getResponseHeader("UserAccount");
-			console.log(UserAccount);
+
 			let jsonList = JSON.parse(UserAccount);
 
 			let content = document.getElementById("personal-account");
@@ -30,5 +31,5 @@ function viewAccount(){
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	let requestBody = `empId=${empId}`;
 	xhr.send(requestBody);
-	console.log(xhr.readyState);
+
 }

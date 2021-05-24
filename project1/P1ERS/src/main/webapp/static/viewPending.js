@@ -1,8 +1,7 @@
 
 viewPending();
 console.log("inside pending.js")
-	
-function viewPending() {
+	function viewPending(){
 
 	let empId = localStorage.getItem("Authorization");	
 	let xhr = new XMLHttpRequest();

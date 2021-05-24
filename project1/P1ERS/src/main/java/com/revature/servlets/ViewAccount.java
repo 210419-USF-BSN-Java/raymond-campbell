@@ -34,9 +34,24 @@ public class ViewAccount extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("Inside view Account");
+		
+		String token = request.getParameter("empId");
+		String[] tokenArr = token.split(":");
+		Integer empId = Integer.parseInt(tokenArr[0]);	
+		User account = empDao.getUserById(empId);
+		
+		if(account != null) {
+		System.out.println("successfully retrieved personal user account");
+		String userAccount = mapper.writeValueAsString(account);
+		response.setStatus(200);
+		response.setHeader("UserAccount", userAccount);
+		System.out.println(response.getStatus());
+	} else {
+		response.sendError(401);
 	}
+
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
