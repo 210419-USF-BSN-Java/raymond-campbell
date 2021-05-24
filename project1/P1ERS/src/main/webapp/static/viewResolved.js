@@ -21,7 +21,7 @@ function viewResolved() {
 
 
 			for(i = 0; i < jsonList.length; i++){
-				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId + "</td>";
+				let request = "<td>" + jsonList[i].reimbAmount + "</td><td>" + jsonList[i].reimbDescription + "</td><td>" + jsonList[i].reimbId  + "</td>";
 			    console.log(request);
 				content.insertAdjacentHTML('beforeend', request);
 			}
